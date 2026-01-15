@@ -10,7 +10,7 @@ public class StatsServiceTest {
     public void findMinimumSale() {
         StatsService service = new StatsService();
 
-        int[] sales = {8, 15, 13, 15, 17, 20, 19, 20, 7, 14, 14, 18};
+        long[] sales = {8, 15, 13, 15, 17, 20, 19, 20, 7, 14, 14, 18};
 
         int expectedMonth = 9;
         int actualMonth = service.minSales(sales);
@@ -18,13 +18,12 @@ public class StatsServiceTest {
         Assertions.assertEquals(expectedMonth, actualMonth);
     }
 
-
     @Test
 
     public void findMaximumSale() {
         StatsService service = new StatsService();
 
-        int[] sales = {8, 15, 13, 15, 17, 20, 19, 20, 7, 14, 14, 18};
+        long[] sales = {8, 15, 13, 15, 17, 20, 19, 20, 7, 14, 14, 18};
 
         int expectedMonth = 8;
         int actualMonth = service.maxSales(sales);
@@ -37,10 +36,10 @@ public class StatsServiceTest {
     public void sumAllSales() {
         StatsService service = new StatsService();
 
-        int[] sales = {8, 15, 13, 15, 17, 20, 19, 20, 7, 14, 14, 18};
+        long[] sales = {8, 15, 13, 15, 17, 20, 19, 20, 7, 14, 14, 18};
 
-        int expectedAll = 8 + 15 + 13 + 15 + 17 + 20 + 19 + 20 + 7 + 14 + 14 + 18;
-        int actualAll = service.sumAllSales(sales);
+        long expectedAll = 8 + 15 + 13 + 15 + 17 + 20 + 19 + 20 + 7 + 14 + 14 + 18;
+        long actualAll = service.sumAllSales(sales);
 
         Assertions.assertEquals(expectedAll, actualAll);
 
@@ -50,10 +49,10 @@ public class StatsServiceTest {
     public void averageMonthlySalesAmount() {
         StatsService service = new StatsService();
 
-        int[] sales = {8, 15, 13, 15, 17, 20, 19, 20, 7, 14, 14, 18};
+        long[] sales = {8, 15, 13, 15, 17, 20, 19, 20, 7, 14, 14, 18};
 
-        int expectedAverage = (8 + 15 + 13 + 15 + 17 + 20 + 19 + 20 + 7 + 14 + 14 + 18) / 12;
-        int actualAverage = service.averageMonthlySalesAmount(sales);
+        long expectedAverage = (8 + 15 + 13 + 15 + 17 + 20 + 19 + 20 + 7 + 14 + 14 + 18) / 12;
+        long actualAverage = service.averageMonthlySalesAmount(sales);
 
         Assertions.assertEquals(expectedAverage, actualAverage);
 
@@ -64,12 +63,12 @@ public class StatsServiceTest {
     public void monthsBelowAverage() {
         StatsService service = new StatsService();
 
-        int[] sales = {8, 15, 13, 15, 17, 20, 19, 20, 7, 14, 14, 18};
+        long[] sales = {8, 15, 13, 15, 17, 20, 19, 20, 7, 14, 14, 18};
 
-        int expectedbelowAverageYields = 5;
-        int actualbelowAverageYields = service.monthsBelowAverage(sales);
+        int expected = 5;
+        int actual = service.monthsBelowAverage(sales);
 
-        Assertions.assertEquals(expectedbelowAverageYields, actualbelowAverageYields);
+        Assertions.assertEquals(expected, actual);
     }
 
     @Test
@@ -77,12 +76,12 @@ public class StatsServiceTest {
     public void monthsAboveAverage() {
         StatsService service = new StatsService();
 
-        int[] sales = {8, 15, 13, 15, 17, 20, 19, 20, 7, 14, 14, 18};
+        long[] sales = {8, 15, 13, 15, 17, 20, 19, 20, 7, 14, 14, 18};
 
-        int expectedaboveAverageYields = 5;
-        int actualaboveAverageYields = service.monthsAboveAverage(sales);
+        int expected = 5;
+        int actual = service.monthsAboveAverage(sales);
 
-        Assertions.assertEquals(expectedaboveAverageYields, actualaboveAverageYields);
+        Assertions.assertEquals(expected, actual);
 
     }
 
